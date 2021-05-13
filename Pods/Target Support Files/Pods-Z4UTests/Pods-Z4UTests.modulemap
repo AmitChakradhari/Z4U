@@ -1,0 +1,6 @@
+framework module Pods_Z4UTests {
+  umbrella header "Pods-Z4UTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
