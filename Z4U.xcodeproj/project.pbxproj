@@ -20,6 +20,10 @@
 		E8510947264E3531006F06B5 /* ImageListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510946264E3531006F06B5 /* ImageListInterface.swift */; };
 		E851094A264E3557006F06B5 /* ImageListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510949264E3557006F06B5 /* ImageListInteractor.swift */; };
 		E851094C264E3568006F06B5 /* ImageListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851094B264E3568006F06B5 /* ImageListWireFrame.swift */; };
+		E8510950264E3CBE006F06B5 /* ImageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851094F264E3CBE006F06B5 /* ImageListPresenter.swift */; };
+		E8510952264E771B006F06B5 /* ImageListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510951264E771B006F06B5 /* ImageListRemoteDataManager.swift */; };
+		E8510954264E9DE6006F06B5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510953264E9DE6006F06B5 /* Model.swift */; };
+		E8510956264EB662006F06B5 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510955264EB662006F06B5 /* NetworkRouter.swift */; };
 		F45A019B514EADECEAF4ACE4 /* Pods_Z4UTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C2F2CE9FC7CDD10652F924 /* Pods_Z4UTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +60,10 @@
 		E8510946264E3531006F06B5 /* ImageListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListInterface.swift; sourceTree = "<group>"; };
 		E8510949264E3557006F06B5 /* ImageListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListInteractor.swift; sourceTree = "<group>"; };
 		E851094B264E3568006F06B5 /* ImageListWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListWireFrame.swift; sourceTree = "<group>"; };
+		E851094F264E3CBE006F06B5 /* ImageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenter.swift; sourceTree = "<group>"; };
+		E8510951264E771B006F06B5 /* ImageListRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListRemoteDataManager.swift; sourceTree = "<group>"; };
+		E8510953264E9DE6006F06B5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E8510955264EB662006F06B5 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,8 @@
 				E851091E264D61CC006F06B5 /* AppDelegate.swift */,
 				E8510920264D61CC006F06B5 /* SceneDelegate.swift */,
 				E8510943264E34DE006F06B5 /* AppDependencies.swift */,
+				E8510953264E9DE6006F06B5 /* Model.swift */,
+				E8510957264EB66B006F06B5 /* Networking */,
 				E8510948264E353A006F06B5 /* ImageListModule */,
 				E8510945264E3518006F06B5 /* Interfaces */,
 				E8510922264D61CC006F06B5 /* ViewController.swift */,
@@ -158,7 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				E8510949264E3557006F06B5 /* ImageListInteractor.swift */,
+				E851094F264E3CBE006F06B5 /* ImageListPresenter.swift */,
 				E851094B264E3568006F06B5 /* ImageListWireFrame.swift */,
+				E8510951264E771B006F06B5 /* ImageListRemoteDataManager.swift */,
 			);
 			path = ImageListModule;
 			sourceTree = "<group>";
@@ -168,6 +180,14 @@
 			children = (
 			);
 			path = ImageDetailModule;
+			sourceTree = "<group>";
+		};
+		E8510957264EB66B006F06B5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E8510955264EB662006F06B5 /* NetworkRouter.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,11 +360,15 @@
 			files = (
 				E8510923264D61CC006F06B5 /* ViewController.swift in Sources */,
 				E851091F264D61CC006F06B5 /* AppDelegate.swift in Sources */,
+				E8510950264E3CBE006F06B5 /* ImageListPresenter.swift in Sources */,
 				E8510921264D61CC006F06B5 /* SceneDelegate.swift in Sources */,
 				E8510947264E3531006F06B5 /* ImageListInterface.swift in Sources */,
+				E8510956264EB662006F06B5 /* NetworkRouter.swift in Sources */,
 				E851094C264E3568006F06B5 /* ImageListWireFrame.swift in Sources */,
 				E8510944264E34DE006F06B5 /* AppDependencies.swift in Sources */,
 				E851094A264E3557006F06B5 /* ImageListInteractor.swift in Sources */,
+				E8510954264E9DE6006F06B5 /* Model.swift in Sources */,
+				E8510952264E771B006F06B5 /* ImageListRemoteDataManager.swift in Sources */,
 				E8510929264D61CC006F06B5 /* Z4U.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

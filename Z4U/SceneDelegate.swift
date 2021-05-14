@@ -20,23 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         appDependencies.installRootViewControllerIntoWindow(window!)
-        
-        
-//        window = UIWindow(windowScene: windowScene)
-////        let vc = UIViewController()
-////        window?.rootViewController = vc
-////        vc.view.backgroundColor = .systemYellow
-////        window?.makeKeyAndVisible()
-//
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//
-//        let navigationController = storyboard.instantiateViewController(withIdentifier: "NC") as! UINavigationController
-////        let imageListController = listViewControllerFromStoryboard()
-////        imageListController.view.backgroundColor = .systemBlue
-////        guard let navController = navigationController  else { return }
-//        //navController.viewControllers = [imageListController]
-//        window?.rootViewController = navigationController
-//        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

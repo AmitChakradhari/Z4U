@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class ImageListInteractor {
+    func searchImages(for searchText: String) {
+        /* make api call and change the model
+         send updates to presenter
+        */
+    }
+}
