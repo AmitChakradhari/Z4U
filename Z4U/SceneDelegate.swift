@@ -11,18 +11,32 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let appDependencies = AppDependencies()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window1 = UIWindow(windowScene: windowScene)
-        let vc = UIViewController()
-        window1.rootViewController = vc
-        vc.view.backgroundColor = .systemYellow
-        window1.makeKeyAndVisible()
+        window = UIWindow(windowScene: windowScene)
+        appDependencies.installRootViewControllerIntoWindow(window!)
+        
+        
+//        window = UIWindow(windowScene: windowScene)
+////        let vc = UIViewController()
+////        window?.rootViewController = vc
+////        vc.view.backgroundColor = .systemYellow
+////        window?.makeKeyAndVisible()
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//
+//        let navigationController = storyboard.instantiateViewController(withIdentifier: "NC") as! UINavigationController
+////        let imageListController = listViewControllerFromStoryboard()
+////        imageListController.view.backgroundColor = .systemBlue
+////        guard let navController = navigationController  else { return }
+//        //navController.viewControllers = [imageListController]
+//        window?.rootViewController = navigationController
+//        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

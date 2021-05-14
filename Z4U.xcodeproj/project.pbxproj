@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		E851092B264D61CE006F06B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E851092A264D61CE006F06B5 /* Assets.xcassets */; };
 		E851092E264D61CE006F06B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E851092C264D61CE006F06B5 /* LaunchScreen.storyboard */; };
 		E8510939264D61CE006F06B5 /* Z4UTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510938264D61CE006F06B5 /* Z4UTests.swift */; };
+		E8510944264E34DE006F06B5 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510943264E34DE006F06B5 /* AppDependencies.swift */; };
+		E8510947264E3531006F06B5 /* ImageListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510946264E3531006F06B5 /* ImageListInterface.swift */; };
+		E851094A264E3557006F06B5 /* ImageListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510949264E3557006F06B5 /* ImageListInteractor.swift */; };
+		E851094C264E3568006F06B5 /* ImageListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851094B264E3568006F06B5 /* ImageListWireFrame.swift */; };
 		F45A019B514EADECEAF4ACE4 /* Pods_Z4UTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C2F2CE9FC7CDD10652F924 /* Pods_Z4UTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +52,10 @@
 		E8510934264D61CE006F06B5 /* Z4UTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Z4UTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8510938264D61CE006F06B5 /* Z4UTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Z4UTests.swift; sourceTree = "<group>"; };
 		E851093A264D61CE006F06B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8510943264E34DE006F06B5 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		E8510946264E3531006F06B5 /* ImageListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListInterface.swift; sourceTree = "<group>"; };
+		E8510949264E3557006F06B5 /* ImageListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListInteractor.swift; sourceTree = "<group>"; };
+		E851094B264E3568006F06B5 /* ImageListWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListWireFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +86,6 @@
 				483C655E32DF6365BC2BDBAF /* Pods-Z4UTests.debug.xcconfig */,
 				7CF01CC0BADB6F16C90E09A0 /* Pods-Z4UTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -116,7 +123,11 @@
 			children = (
 				E851091E264D61CC006F06B5 /* AppDelegate.swift */,
 				E8510920264D61CC006F06B5 /* SceneDelegate.swift */,
+				E8510943264E34DE006F06B5 /* AppDependencies.swift */,
+				E8510948264E353A006F06B5 /* ImageListModule */,
+				E8510945264E3518006F06B5 /* Interfaces */,
 				E8510922264D61CC006F06B5 /* ViewController.swift */,
+				E851094E264E359A006F06B5 /* ImageDetailModule */,
 				E8510924264D61CC006F06B5 /* Main.storyboard */,
 				E851092A264D61CE006F06B5 /* Assets.xcassets */,
 				E851092C264D61CE006F06B5 /* LaunchScreen.storyboard */,
@@ -133,6 +144,30 @@
 				E851093A264D61CE006F06B5 /* Info.plist */,
 			);
 			path = Z4UTests;
+			sourceTree = "<group>";
+		};
+		E8510945264E3518006F06B5 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				E8510946264E3531006F06B5 /* ImageListInterface.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		E8510948264E353A006F06B5 /* ImageListModule */ = {
+			isa = PBXGroup;
+			children = (
+				E8510949264E3557006F06B5 /* ImageListInteractor.swift */,
+				E851094B264E3568006F06B5 /* ImageListWireFrame.swift */,
+			);
+			path = ImageListModule;
+			sourceTree = "<group>";
+		};
+		E851094E264E359A006F06B5 /* ImageDetailModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageDetailModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +341,10 @@
 				E8510923264D61CC006F06B5 /* ViewController.swift in Sources */,
 				E851091F264D61CC006F06B5 /* AppDelegate.swift in Sources */,
 				E8510921264D61CC006F06B5 /* SceneDelegate.swift in Sources */,
+				E8510947264E3531006F06B5 /* ImageListInterface.swift in Sources */,
+				E851094C264E3568006F06B5 /* ImageListWireFrame.swift in Sources */,
+				E8510944264E34DE006F06B5 /* AppDependencies.swift in Sources */,
+				E851094A264E3557006F06B5 /* ImageListInteractor.swift in Sources */,
 				E8510929264D61CC006F06B5 /* Z4U.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
