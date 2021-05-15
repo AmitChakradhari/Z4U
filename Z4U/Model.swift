@@ -27,3 +27,4 @@ struct ImageInfo: Codable {
     let width: Int
     let height: Int
 }
+

@@ -11,7 +11,9 @@ import RxSwift
 import Alamofire
 import RxAlamofire
 
-class ImageListRemoteDataManager {
+class ImageListRemoteDataManager: ImageListRemoteDataManagerProtocol {
+    var remoteDataHandler: ImageListResponseHandlerProtocol?
+    
     func retrieveImageList(for text: String) {
         let re = ApiRouter.getImages(text)
         print(re)
@@ -19,10 +21,11 @@ class ImageListRemoteDataManager {
         .debug()
             .responseData()
             .expectingObject(ofType: ImageList.self)
-            .subscribe(onNext: {  result in
+            .subscribe(onNext: { [weak self] result in
                 switch result {
                 case .success(let imageObject):
                     print(imageObject, "imageObject")
+                    self?.remoteDataHandler?.onRetrievedImages(imageObject)
                 case .failure(let error):
                     print(error, "error")
                 }
