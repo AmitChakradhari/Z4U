@@ -16,7 +16,6 @@ class ImageListRemoteDataManager: ImageListRemoteDataManagerProtocol {
     
     func retrieveImageList(for text: String) {
         let re = ApiRouter.getImages(text)
-        print(re)
         _ = RxAlamofire.request(ApiRouter.getImages(text))
             .responseData()
             .expectingObject(ofType: ImageList.self)
@@ -88,7 +87,6 @@ enum ApiRouter: URLRequestConvertible {
 extension Observable where Element == (HTTPURLResponse, Data){
     func expectingObject<T : Codable>(ofType type: T.Type) -> Observable< Result<T, Error>>{
         return self.map { (httpURLResponse, data) -> Result<T, Error> in
-            print(data)
             if 200 ... 299 ~= httpURLResponse.statusCode {
                 do {
                     let object = try JSONDecoder().decode(type, from: data)

@@ -13,6 +13,7 @@ import UIKit
 protocol ImageListWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     func presentImageListScreen(from window: UIWindow)
+    func presentImageDetailScreen(from view: ImageListViewProtocol, for object: ImageObject)
 }
 
 protocol ImageListInteractorProtocol: class {
@@ -31,7 +32,7 @@ protocol ImageListPresenterProtocol: class {
     // PRESENTER -> VIEW
     func updateImageList(images: ImageList)
     // VIEW -> PRESENTER
-    func presentDetailScreen(for image: ImageObject)
+    func presentDetailScreen(from view: ImageListViewProtocol, for image: ImageObject)
 }
 
 protocol ImageListRemoteDataManagerProtocol: class {

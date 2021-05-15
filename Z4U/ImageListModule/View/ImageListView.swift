@@ -67,12 +67,16 @@ extension ImageListView: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let deviceWidth = collectionView.frame.width
         var prefferedSize: CGFloat
-        print(deviceWidth, collectionView.contentInset.left)
         if deviceWidth <= 400 {
             prefferedSize = (deviceWidth - 20)/2
             return CGSize(width: prefferedSize, height: prefferedSize)
         } else {
             return CGSize(width: 200, height: 200)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let imageObject = imageList[indexPath.row]
+        presenter?.presentDetailScreen(from: self, for: imageObject)
     }
 }

@@ -10,11 +10,12 @@ import UIKit
 
 class ImageListWireFrame: ImageListWireFrameProtocol {
     
-    static let rootStoryBoardName = "Main"
+    
+    static let mainStoryBoardName = "Main"
     static let navigationIdentifier = "NavigationController"
     
     func presentImageListScreen(from window: UIWindow) {
-        let navigationController = mainStoryboard.instantiateViewController(withIdentifier: ImageListWireFrame.navigationIdentifier) as? UINavigationController
+        let navigationController = ImageListWireFrame.mainStoryboard.instantiateViewController(withIdentifier: ImageListWireFrame.navigationIdentifier) as? UINavigationController
         guard let navController = navigationController, let imageListView = navController.children.first as? ImageListView  else { return }
         configureDependencies(for: imageListView)
         window.rootViewController = navController
@@ -37,7 +38,16 @@ class ImageListWireFrame: ImageListWireFrameProtocol {
         remoteDataManager.remoteDataHandler = interactor
     }
     
-    var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: ImageListWireFrame.rootStoryBoardName, bundle: Bundle.main)
+    func presentImageDetailScreen(from view: ImageListViewProtocol, for object: ImageObject) {
+
+        let imageDetailView = ImageDetailWireFrame.prepareImageDetailModule()
+        guard let sourceView = view as? ImageListView, let detailView = imageDetailView else { return }
+        
+        detailView.presenter?.imageDetail = object
+        sourceView.navigationController?.pushViewController(detailView, animated: true)
+    }
+    
+    static var mainStoryboard: UIStoryboard {
+        return UIStoryboard(name: ImageListWireFrame.mainStoryBoardName, bundle: Bundle.main)
     }
 }

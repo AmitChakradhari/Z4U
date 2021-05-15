@@ -9,6 +9,7 @@
 import Foundation
 
 class ImageListPresenter: ImageListPresenterProtocol {
+    
     var view: ImageListViewProtocol?
     
     var interactor: ImageListInteractorProtocol?
@@ -27,8 +28,7 @@ class ImageListPresenter: ImageListPresenterProtocol {
         view?.updateImageList(images: imageObjects)
     }
     
-    func presentDetailScreen(for image: ImageObject) {
-        
+    func presentDetailScreen(from view: ImageListViewProtocol,for image: ImageObject) {
+        wireframe?.presentImageDetailScreen(from: view, for: image)
     }
-    
 }
