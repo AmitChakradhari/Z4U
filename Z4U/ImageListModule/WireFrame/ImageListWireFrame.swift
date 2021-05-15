@@ -15,9 +15,26 @@ class ImageListWireFrame: ImageListWireFrameProtocol {
     
     func presentImageListScreen(from window: UIWindow) {
         let navigationController = mainStoryboard.instantiateViewController(withIdentifier: ImageListWireFrame.navigationIdentifier) as? UINavigationController
-        guard let navController = navigationController  else { return }
+        guard let navController = navigationController, let imageListView = navController.children.first as? ImageListView  else { return }
+        configureDependencies(for: imageListView)
         window.rootViewController = navController
         window.makeKeyAndVisible()
+    }
+    
+    func configureDependencies(for view: ImageListView) {
+        let presenter: ImageListPresenterProtocol = ImageListPresenter()
+        let interactor: ImageListInteractorProtocol & ImageListResponseHandlerProtocol = ImageListInteractor()
+        let remoteDataManager: ImageListRemoteDataManagerProtocol = ImageListRemoteDataManager()
+        
+        view.presenter = presenter
+        
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.wireframe = self
+        
+        interactor.presenter = presenter
+        interactor.remoteDataManager = remoteDataManager
+        remoteDataManager.remoteDataHandler = interactor
     }
     
     var mainStoryboard: UIStoryboard {

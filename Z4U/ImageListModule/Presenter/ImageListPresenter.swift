@@ -21,8 +21,8 @@ class ImageListPresenter: ImageListPresenterProtocol {
     
     func updateImageList(images: ImageList) {
         let imageObjectValues = images.query.pages.values
-        let imageObjects: [ImageObject] = imageObjectValues.map { imageObject in
-            return imageObject
+        let imageObjects: [ImageObject] = imageObjectValues.filter { imageObject in
+            return imageObject.thumbnail != nil
         }
         view?.updateImageList(images: imageObjects)
     }

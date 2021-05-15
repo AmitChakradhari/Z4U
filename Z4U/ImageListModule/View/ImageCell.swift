@@ -20,7 +20,11 @@ class ImageCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        imageLabel = nil
-        imageView = nil
+        imageLabel.text = nil
+        imageView.image = nil
+    }
+    
+    override func layoutSubviews() {
+        contentView.layer.cornerRadius = 8
     }
 }

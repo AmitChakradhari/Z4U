@@ -9,14 +9,12 @@
 import Foundation
 
 class ImageListInteractor: ImageListInteractorProtocol {
+    weak var presenter: ImageListPresenterProtocol?
     var remoteDataManager: ImageListRemoteDataManagerProtocol? = ImageListRemoteDataManager()
         
     func getImages(for text: String) {
         remoteDataManager?.retrieveImageList(for: text)
     }
-    
-    weak var presenter: ImageListPresenterProtocol?
-    
 }
 
 extension ImageListInteractor: ImageListResponseHandlerProtocol {

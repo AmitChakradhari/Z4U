@@ -18,13 +18,11 @@ class ImageListRemoteDataManager: ImageListRemoteDataManagerProtocol {
         let re = ApiRouter.getImages(text)
         print(re)
         _ = RxAlamofire.request(ApiRouter.getImages(text))
-        .debug()
             .responseData()
             .expectingObject(ofType: ImageList.self)
             .subscribe(onNext: { [weak self] result in
                 switch result {
                 case .success(let imageObject):
-                    print(imageObject, "imageObject")
                     self?.remoteDataHandler?.onRetrievedImages(imageObject)
                 case .failure(let error):
                     print(error, "error")

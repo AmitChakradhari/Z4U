@@ -11,13 +11,7 @@ import UIKit
 class AppDependencies {
     let imageListWireFrame = ImageListWireFrame()
     
-    init() {
-        configureDependencies()
-    }
     func installRootViewControllerIntoWindow(_ window: UIWindow) {
         imageListWireFrame.presentImageListScreen(from: window)
-    }
-    func configureDependencies() {
-        
     }
 }
