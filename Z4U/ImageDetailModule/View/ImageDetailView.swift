@@ -12,7 +12,7 @@ import AlamofireImage
 class ImageDetailView: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var imageLabel: UILabel!
+    
     var presenter: ImageDetailPresenterProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,6 @@ class ImageDetailView: UIViewController {
 extension ImageDetailView: ImageDetailViewProtocol {
     
     func updateImageDetail(with imageDetail: ImageObject) {
-        imageLabel.text = imageDetail.title
         if let thumbnail = imageDetail.thumbnail, let imageURL = URL(string: thumbnail.source) {
             imageView.af.setImage(withURL: imageURL)
         }
