@@ -29,6 +29,7 @@
 		E8510963264FAE23006F06B5 /* ImageDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510962264FAE23006F06B5 /* ImageDetailWireFrame.swift */; };
 		E8510967264FB131006F06B5 /* ImageDetailInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510966264FB131006F06B5 /* ImageDetailInterfaces.swift */; };
 		E8510969264FB687006F06B5 /* ImageDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8510968264FB687006F06B5 /* ImageDetailPresenter.swift */; };
+		E851096E264FD011006F06B5 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E851096D264FD011006F06B5 /* CoreDataStore.swift */; };
 		F45A019B514EADECEAF4ACE4 /* Pods_Z4UTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C2F2CE9FC7CDD10652F924 /* Pods_Z4UTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		E8510962264FAE23006F06B5 /* ImageDetailWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailWireFrame.swift; sourceTree = "<group>"; };
 		E8510966264FB131006F06B5 /* ImageDetailInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailInterfaces.swift; sourceTree = "<group>"; };
 		E8510968264FB687006F06B5 /* ImageDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailPresenter.swift; sourceTree = "<group>"; };
+		E851096D264FD011006F06B5 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +145,7 @@
 				E8510920264D61CC006F06B5 /* SceneDelegate.swift */,
 				E8510943264E34DE006F06B5 /* AppDependencies.swift */,
 				E8510953264E9DE6006F06B5 /* Model.swift */,
-				E8510957264EB66B006F06B5 /* Networking */,
+				E851096B264FCFDD006F06B5 /* Services */,
 				E8510948264E353A006F06B5 /* ImageListModule */,
 				E851094E264E359A006F06B5 /* ImageDetailModule */,
 				E8510924264D61CC006F06B5 /* Main.storyboard */,
@@ -196,12 +198,12 @@
 			path = ImageDetailModule;
 			sourceTree = "<group>";
 		};
-		E8510957264EB66B006F06B5 /* Networking */ = {
+		E8510957264EB66B006F06B5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				E8510955264EB662006F06B5 /* NetworkRouter.swift */,
 			);
-			path = Networking;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		E8510958264F3DDE006F06B5 /* View */ = {
@@ -275,6 +277,23 @@
 				E8510968264FB687006F06B5 /* ImageDetailPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E851096B264FCFDD006F06B5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E851096C264FCFF6006F06B5 /* Storage */,
+				E8510957264EB66B006F06B5 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E851096C264FCFF6006F06B5 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				E851096D264FD011006F06B5 /* CoreDataStore.swift */,
+			);
+			name = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E851096E264FD011006F06B5 /* CoreDataStore.swift in Sources */,
 				E8510967264FB131006F06B5 /* ImageDetailInterfaces.swift in Sources */,
 				E8510923264D61CC006F06B5 /* ImageListView.swift in Sources */,
 				E8510960264FAD71006F06B5 /* ImageDetailView.swift in Sources */,

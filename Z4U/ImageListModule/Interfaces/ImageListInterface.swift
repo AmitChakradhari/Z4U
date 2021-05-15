@@ -47,6 +47,13 @@ protocol ImageListResponseHandlerProtocol: class {
 
 protocol ImageListViewProtocol: class {
     var presenter: ImageListPresenterProtocol? {get set}
+    
+    func showError()
+    
+    func showLoading()
+    
+    func hideLoading()
+    
     // PRESENTER -> VIEW
     func updateImageList(images: [ImageObject])
 }

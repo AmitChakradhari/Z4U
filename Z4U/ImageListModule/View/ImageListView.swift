@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class ImageListView: UIViewController {
 
@@ -40,6 +41,18 @@ extension ImageListView: ImageListViewProtocol {
     func updateImageList(images: [ImageObject]) {
         imageList = images
         collectionView.reloadData()
+    }
+    
+    func showError() {
+        HUD.flash(.label("Some Error Occurred"), delay: 2.0)
+    }
+    
+    func showLoading() {
+        HUD.show(.progress)
+    }
+    
+    func hideLoading() {
+        HUD.hide()
     }
 }
 

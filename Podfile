@@ -10,6 +10,7 @@ target 'Z4U' do
    pod'RxCocoa'
    pod 'RxAlamofire'
    pod 'AlamofireImage'
+   pod 'PKHUD'
   target 'Z4UTests' do
     inherit! :search_paths
     # Pods for testing

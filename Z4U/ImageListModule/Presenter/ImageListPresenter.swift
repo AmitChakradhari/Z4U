@@ -17,6 +17,7 @@ class ImageListPresenter: ImageListPresenterProtocol {
     var wireframe: ImageListWireFrameProtocol?
     
     func getImages(for text: String) {
+        view?.showLoading()
         interactor?.getImages(for: text)
     }
     
@@ -26,6 +27,7 @@ class ImageListPresenter: ImageListPresenterProtocol {
             return imageObject.thumbnail != nil
         }
         view?.updateImageList(images: imageObjects)
+        view?.hideLoading()
     }
     
     func presentDetailScreen(from view: ImageListViewProtocol,for image: ImageObject) {

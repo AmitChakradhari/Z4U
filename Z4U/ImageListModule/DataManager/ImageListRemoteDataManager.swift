@@ -15,7 +15,6 @@ class ImageListRemoteDataManager: ImageListRemoteDataManagerProtocol {
     var remoteDataHandler: ImageListResponseHandlerProtocol?
     
     func retrieveImageList(for text: String) {
-        let re = ApiRouter.getImages(text)
         _ = RxAlamofire.request(ApiRouter.getImages(text))
             .responseData()
             .expectingObject(ofType: ImageList.self)
