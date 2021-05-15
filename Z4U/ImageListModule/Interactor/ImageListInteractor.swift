@@ -29,6 +29,7 @@ class ImageListInteractor: ImageListInteractorProtocol {
 }
 
 extension ImageListInteractor: ImageListResponseHandlerProtocol {
+    
     func onRetrievedImages(images: ImageList, for text: String) {
         presenter?.updateImageList(images: images)
         let imageObjectValues = images.query.pages.values
@@ -40,5 +41,10 @@ extension ImageListInteractor: ImageListResponseHandlerProtocol {
         } catch (let error) {
             print(error, "error in saving to core data")
         }
+    }
+    
+    func onRecievingError() {
+        presenter?.view?.hideLoading()
+        presenter?.view?.showError(with: "no results found")
     }
 }

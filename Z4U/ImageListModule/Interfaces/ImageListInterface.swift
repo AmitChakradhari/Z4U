@@ -19,7 +19,7 @@ protocol ImageListWireFrameProtocol: class {
 protocol ImageListViewProtocol: class {
     var presenter: ImageListPresenterProtocol? {get set}
     
-    func showError()
+    func showError(with text: String)
     
     func showLoading()
     
@@ -57,6 +57,7 @@ protocol ImageListRemoteDataManagerProtocol: class {
 protocol ImageListResponseHandlerProtocol: class {
     // DATA MANAGER -> INTERACTOR
     func onRetrievedImages(images: ImageList, for text: String)
+    func onRecievingError()
 }
 
 protocol ImageListLocalDataManagerProtocol: class {

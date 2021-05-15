@@ -22,6 +22,7 @@ class ImageListView: UIViewController {
         searchBar.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
+        searchBar.autocapitalizationType = .words
         // Do any additional setup after loading the view.
     }
     
@@ -43,8 +44,8 @@ extension ImageListView: ImageListViewProtocol {
         collectionView.reloadData()
     }
     
-    func showError() {
-        HUD.flash(.label("Some Error Occurred"), delay: 2.0)
+    func showError(with text: String) {
+        HUD.flash(.label(text), delay: 2.0)
     }
     
     func showLoading() {

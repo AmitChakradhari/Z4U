@@ -22,8 +22,8 @@ class ImageListRemoteDataManager: ImageListRemoteDataManagerProtocol {
                 switch result {
                 case .success(let imageObject):
                     self?.remoteDataHandler?.onRetrievedImages(images: imageObject, for: text)
-                case .failure(let error):
-                    print(error, "error")
+                case .failure(_):
+                    self?.remoteDataHandler?.onRecievingError()
                 }
         }, onError: {  error in
             print(error, "error")
