@@ -21,7 +21,7 @@ class ImageListRemoteDataManager: ImageListRemoteDataManagerProtocol {
             .subscribe(onNext: { [weak self] result in
                 switch result {
                 case .success(let imageObject):
-                    self?.remoteDataHandler?.onRetrievedImages(imageObject)
+                    self?.remoteDataHandler?.onRetrievedImages(images: imageObject, for: text)
                 case .failure(let error):
                     print(error, "error")
                 }

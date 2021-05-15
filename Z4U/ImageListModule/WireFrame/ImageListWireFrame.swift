@@ -26,6 +26,7 @@ class ImageListWireFrame: ImageListWireFrameProtocol {
         let presenter: ImageListPresenterProtocol = ImageListPresenter()
         let interactor: ImageListInteractorProtocol & ImageListResponseHandlerProtocol = ImageListInteractor()
         let remoteDataManager: ImageListRemoteDataManagerProtocol = ImageListRemoteDataManager()
+        let localDataManager: ImageListLocalDataManagerProtocol = ImageListLocalDataManager()
         
         view.presenter = presenter
         
@@ -35,6 +36,7 @@ class ImageListWireFrame: ImageListWireFrameProtocol {
         
         interactor.presenter = presenter
         interactor.remoteDataManager = remoteDataManager
+        interactor.localDataManager = localDataManager
         remoteDataManager.remoteDataHandler = interactor
     }
     

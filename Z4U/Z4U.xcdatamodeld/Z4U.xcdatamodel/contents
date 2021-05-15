@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ImageListModel" representedClassName="ImageListModel" syncable="YES">
+        <attribute name="searchText" optional="YES" attributeType="String"/>
+        <relationship name="objects" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ImageObjectModel" inverseName="imageList" inverseEntity="ImageObjectModel"/>
+    </entity>
+    <entity name="ImageObjectModel" representedClassName="ImageObjectModel" syncable="YES">
+        <attribute name="pageId" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="imageList" maxCount="1" deletionRule="Nullify" destinationEntity="ImageListModel" inverseName="objects" inverseEntity="ImageListModel"/>
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ThumbnailModel" inverseName="imageObject" inverseEntity="ThumbnailModel"/>
+    </entity>
+    <entity name="ThumbnailModel" representedClassName="ThumbnailModel" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="width" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <relationship name="imageObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageObjectModel" inverseName="thumbnail" inverseEntity="ImageObjectModel"/>
+    </entity>
+    <elements>
+        <element name="ImageListModel" positionX="-283.25" positionY="-22.29296875" width="128" height="73"/>
+        <element name="ImageObjectModel" positionX="-54" positionY="0" width="128" height="103"/>
+        <element name="ThumbnailModel" positionX="155.95703125" positionY="160.51171875" width="128" height="103"/>
+    </elements>
 </model>

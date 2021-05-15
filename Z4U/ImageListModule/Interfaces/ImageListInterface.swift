@@ -16,9 +16,23 @@ protocol ImageListWireFrameProtocol: class {
     func presentImageDetailScreen(from view: ImageListViewProtocol, for object: ImageObject)
 }
 
+protocol ImageListViewProtocol: class {
+    var presenter: ImageListPresenterProtocol? {get set}
+    
+    func showError()
+    
+    func showLoading()
+    
+    func hideLoading()
+    
+    // PRESENTER -> VIEW
+    func updateImageList(images: [ImageObject])
+}
+
 protocol ImageListInteractorProtocol: class {
-    var presenter: ImageListPresenterProtocol? { get set }
-    var remoteDataManager: ImageListRemoteDataManagerProtocol? { get set }
+    var presenter: ImageListPresenterProtocol? {get set}
+    var localDataManager: ImageListLocalDataManagerProtocol? {get set}
+    var remoteDataManager: ImageListRemoteDataManagerProtocol? {get set}
     // PRESENTER -> INTERACTOR
     func getImages(for text: String)
 }
@@ -42,18 +56,11 @@ protocol ImageListRemoteDataManagerProtocol: class {
 
 protocol ImageListResponseHandlerProtocol: class {
     // DATA MANAGER -> INTERACTOR
-    func onRetrievedImages(_ images: ImageList)
+    func onRetrievedImages(images: ImageList, for text: String)
 }
 
-protocol ImageListViewProtocol: class {
-    var presenter: ImageListPresenterProtocol? {get set}
-    
-    func showError()
-    
-    func showLoading()
-    
-    func hideLoading()
-    
-    // PRESENTER -> VIEW
-    func updateImageList(images: [ImageObject])
+protocol ImageListLocalDataManagerProtocol: class {
+    // INTERACTOR -> DATA MANAGER
+    func retrieveImageList(for searchText: String) throws -> [ImageObject]
+    func saveImageList(for searchText: String, object: [ImageObject]) throws
 }

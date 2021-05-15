@@ -16,13 +16,18 @@ struct ImagePages: Codable {
     let pages: [String: ImageObject]
 }
 
-struct ImageObject: Codable {
+struct ImageObject: Codable, Hashable {
+    
     let pageid: Int
     let title: String
     let thumbnail: ImageInfo?
+    
+    static func == (lhs: ImageObject, rhs: ImageObject) -> Bool {
+        return lhs.pageid == rhs.pageid
+    }
 }
 
-struct ImageInfo: Codable {
+struct ImageInfo: Codable, Hashable {
     let source: String
     let width: Int
     let height: Int
